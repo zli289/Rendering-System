@@ -38,8 +38,12 @@ def Ground(object1):
 	#	interpolate intensities
 	results=Interpolation.ScanConversion(object1)
 	i_buffer,t_buffer=Interpolation.Z_buffer(results)
+	#	illmination
+	for y_index,y in enumerate(i_buffer):
+		for x_index,color1 in enumerate(y):
+			if color1!=-1:
+				t_buffer[y_index][x_index]=object1.color
 	#	rendering
-	Rendering.objectcolor=object1.color
 	Rendering.renderforpixel(i_buffer,t_buffer)
 
 def Phong(object1):
@@ -57,7 +61,6 @@ def Phong(object1):
 				pos=t_buffer[y_index][x_index]
 				t_buffer[y_index][x_index]=data[int(pos[0]*400-1)][int(pos[1]*600-1)]
 	#	rendering
-	Rendering.objectcolor=object1.color
 	Rendering.renderforpixel(i_buffer,t_buffer)
 
 def textureimage(H,W):

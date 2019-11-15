@@ -3,7 +3,7 @@ import SingleObject
 import Readfile 
 import Shading
 #	Loading file
-Points1,Polygons1, numofPolygon1=Readfile.readfile('D files/cow.d.txt')
+Points1,Polygons1, numofPolygon1=Readfile.readfile('D files/better-ball.d.txt')
 #	Camera configuration
 c_pos=[5,5,20]
 p_ref=[0,0,0]
@@ -28,7 +28,7 @@ Shading.kd=0.6
 Shading.c_pos=c_pos
 # choose rendering
 
-rendering=3
+rendering=4
 if rendering==1:
 	Shading.Rendering.drawing(object1)
 elif rendering==2:

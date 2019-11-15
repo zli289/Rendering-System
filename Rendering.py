@@ -3,7 +3,7 @@ import tkinter
 def toRGB(texture,intensity):
 	rgb='#'
 	for i in range(3):
-		num=abs(int(color[i]*intensity[i]))
+		num=abs(int(texture[i]*intensity[i]))
 		r=str(hex(num))[2:]
 		if len(r)==1:
 			r='0'+r
@@ -43,9 +43,9 @@ def renderforpixel(i_buffer,t_buffer):
 	canvas = tkinter.Canvas(root,bg='white',height=800,width=1000)
 	canvas.pack()
 	for y_index,y in enumerate(i_buffer):
-		for x_index,color in enumerate(y):
-			if color!=-1:
-				canvas.create_line(x_index,y_index,x_index+1,y_index,width=1,fill=toRGB(t_buffer[y_index][x_index],color))
+		for x_index,intensity in enumerate(y):
+			if intensity!=-1:
+				canvas.create_line(x_index,y_index,x_index+1,y_index,width=1,fill=toRGB(t_buffer[y_index][x_index],intensity))
 	root.mainloop()
 
 def noiseimage(noise,H,W):
