@@ -1,8 +1,8 @@
-#   Rendering System for 3D object   |   
+#   Rendering System for 3D object      
 
 ##  Modules
 
-|   Files               |   Description     |
+|   Module              |   Description     |
 | ---------------       |   --------------- |
 |   Camera              | Defines camera parements, Viewing and Perspective translation here.   |
 |   Entrance            | Loads file, camera configuration, object initializtion, light source setting, loading texture file, choosing shading models.    |
