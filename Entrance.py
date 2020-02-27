@@ -3,7 +3,7 @@ import SingleObject
 import Readfile 
 import Shading
 #	Loading file
-Points1,Polygons1, numofPolygon1=Readfile.readfile('D files/better-ball.d.txt')
+Points1,Polygons1, numofPolygon1=Readfile.readfile('D files/nteapot6.d.txt')
 #	Camera configuration
 c_pos=[5,5,10]
 p_ref=[0,0,0]
@@ -12,7 +12,8 @@ h=15
 f=80
 c=Camera.Camera(c_pos,p_ref,d,h,f)
 #	Object initialization
-object1=SingleObject.SingleObject(Points1,Polygons1,[0,0,0],numofPolygon1)
+object1=SingleObject.SingleObject(Points1,Polygons1,[0,-1,0],numofPolygon1)
+#	default backfaceculling is on
 object1.backfaceculling(c)
 object1.WorldtoScreen(c)
 object1.ScreentoDevices()
@@ -26,9 +27,11 @@ Shading.ka=0.4
 Shading.ks=1
 Shading.kd=0.6
 Shading.c_pos=c_pos
+#	Texture image
+Shading.imagefile='strip.jpg'
 # choose rendering
 
-rendering=2
+rendering=1
 if rendering==1:
 	Shading.Rendering.drawing(object1)
 elif rendering==2:

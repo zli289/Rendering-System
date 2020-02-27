@@ -62,7 +62,7 @@ def Phong(object1):
 
 def AddTexture(object1):
 	#data=Texture.textureimage()
-	image= Image.open('stripe.jpg')
+	image= Image.open(imagefile)
 	data=np.asarray(image)
 	#	interpolate vertex's normals
 	results=Interpolation.ScanConversion(object1)
