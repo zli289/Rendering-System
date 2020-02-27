@@ -47,6 +47,20 @@ def Ground(object1):
 	Rendering.renderforpixel(i_buffer,t_buffer)
 
 def Phong(object1):
+	#	interpolate vertex's normals
+	results=Interpolation.ScanConversion(object1)
+	i_buffer,t_buffer=Interpolation.Z_buffer(results)
+	#	illmination
+	for y_index,y in enumerate(i_buffer):
+		for x_index,color1 in enumerate(y):
+			if color1!=-1:
+				i_buffer[y_index][x_index]=illuminate(color1,c_pos,light,i_light,ks,ka,kd)
+				pos=t_buffer[y_index][x_index]
+				t_buffer[y_index][x_index]=object1.color
+	#	rendering
+	Rendering.renderforpixel(i_buffer,t_buffer)
+
+def AddTexture(object1):
 	#data=Texture.textureimage()
 	image= Image.open('stripe.jpg')
 	data=np.asarray(image)

@@ -67,10 +67,14 @@ class SingleObject(object):
 
 		for index in range(self.numofPolygon):
 			for vertex in self.Polygons[index][1:]:
-		#		for i,point in enumerate(self.Points):
-		#			if self.Points[vertex-1]==point:
-		#				v_normals[i]=M.add(v_normals[i],self.normals[index])
-				v_normals[vertex-1]=M.add(v_normals[vertex-1],self.normals[index])
+		#	for nteapot6 file, some points has more than one index
+		#	consequnsely the vertex normal calculated by index would be wrong	
+		#	to avoit this, the points for a polygon need to be counted manualy	
+				for i,point in enumerate(self.Points):
+					if self.Points[vertex-1]==point:
+						v_normals[i]=M.add(v_normals[i],self.normals[index])
+		#	for other files, just use the index
+		#		v_normals[vertex-1]=M.add(v_normals[vertex-1],self.normals[index])
 			
 		for index in range(len(v_normals)):
 			v_normals[index]=M.normalize(v_normals[index])

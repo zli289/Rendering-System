@@ -1,4 +1,6 @@
-#   Rendering System for computer graphics
+#   Rendering System for 3D object
+
+##  Modules
 +   Camera: defines camera parements, Viewing and Perspective translation here.
 +   Entrance: loading file, camera configuration, object initializtion, light source setting, loading texture file, choosing shading models.
 +   Interpolation: Scan conversion and Z-buffer functions for z values(visible surface), vertex normals(phong shading) and light intensities(ground shading), [u,v] values(texture mapping) on points.
@@ -9,4 +11,11 @@
 +   Shading: three shading models, illumination function for single vector.
 +   Texture: cylinder mapping to get [u,v] for single object, textureimage function to genertate texture image by using perlin noise 
 
-
+##  Sample Images
+![cow](pics/Cow1.jpg)
+![cow](pics/Cow2.jpg)
+![teapot](pics/constant.jpg)
+![teapot](pics/ground.jpg)
+![teapot](pics/phong.jpg)
+![texture](pics/texture.jpg)
+![texture](pics/ball.jpg)

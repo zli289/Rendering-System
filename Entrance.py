@@ -5,7 +5,7 @@ import Shading
 #	Loading file
 Points1,Polygons1, numofPolygon1=Readfile.readfile('D files/better-ball.d.txt')
 #	Camera configuration
-c_pos=[5,5,20]
+c_pos=[5,5,10]
 p_ref=[0,0,0]
 d=20
 h=15
@@ -17,7 +17,7 @@ object1.backfaceculling(c)
 object1.WorldtoScreen(c)
 object1.ScreentoDevices()
 #	Object's color(RGB)
-object1.color=[240,20,20]
+object1.color=[20,200,160]
 Shading.Rendering.color=object1.color
 #	Light source configuration
 Shading.light=[30,30,30]
@@ -28,7 +28,7 @@ Shading.kd=0.6
 Shading.c_pos=c_pos
 # choose rendering
 
-rendering=4
+rendering=2
 if rendering==1:
 	Shading.Rendering.drawing(object1)
 elif rendering==2:
@@ -38,4 +38,6 @@ elif rendering==3:
 elif rendering==4:
 	Shading.Phong(object1)
 elif rendering==5:
+	Shading.AddTexture(object1)
+elif rendering==6:
 	Shading.textureimage(256,256)

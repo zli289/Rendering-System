@@ -29,7 +29,7 @@ def renderforscan(results,intensities):
 	canvas = tkinter.Canvas(root,bg='white',height=800,width=1000)
 	canvas.pack()
 	for polygon in results:
-		color=toRGB([],intensities.pop(0))
+		color=toRGB(objectcolor,intensities.pop(0))
 		for line in polygon:
 			l=[]
 			y=line.pop(0)

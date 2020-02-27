@@ -79,8 +79,8 @@ def textureimage(H,W):
 	image=[]
 	x=0
 	y=0
-	z_x = 0.05
-	z_y = 0.05
+	z_x = 0.1
+	z_y = 0.1
 	for i in range(H):
 		row=[]
 		for j in range(W):
