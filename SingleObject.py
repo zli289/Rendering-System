@@ -67,8 +67,8 @@ class SingleObject(object):
 
 		for index in range(self.numofPolygon):
 			for vertex in self.Polygons[index][1:]:
-		#	for nteapot6 file, some points has more than one index
-		#	consequnsely the vertex normal calculated by index would be wrong	
+		#	for nteapot6 file, some points are represented by more than one index
+		#	consequently the vertex normal calculated by index would be wrong	
 		#	to avoit this, the points for a polygon need to be counted manualy	
 				for i,point in enumerate(self.Points):
 					if self.Points[vertex-1]==point:

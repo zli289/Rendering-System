@@ -27,9 +27,6 @@ def Constant(object1):
 	Rendering.renderforscan(results,intensities)
 
 def Ground(object1):
-	#data=Texture.textureimage()
-	image= Image.open('stripe.jpg')
-	data=np.asarray(image)
 	#	vertex's intensites
 	v_intensities=[]
 	for v_normal in object1.v_normals:

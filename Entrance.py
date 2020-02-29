@@ -31,7 +31,7 @@ Shading.c_pos=c_pos
 Shading.imagefile='strip.jpg'
 # choose rendering
 
-rendering=1
+rendering=2
 if rendering==1:
 	Shading.Rendering.drawing(object1)
 elif rendering==2:
